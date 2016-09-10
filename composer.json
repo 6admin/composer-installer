@@ -1,0 +1,35 @@
+{
+    "name": "6admin/composer-installer",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "description": "Composer library installer for 6admin server manager",
+    "keywords": [
+    ],
+    "authors": [
+        {
+            "name": "Anael Favre",
+            "email": "anael.favre@gmail.com"
+        },
+        {
+            "name": "Kyle Robinson Young",
+            "email": "kyle@dontkry.com",
+            "homepage": "https://github.com/shama"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Composer\\Installers\\": "src/Composer/Installers" }
+    },
+    "extra": {
+        "class": "Composer\\Installers\\Plugin",
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "require": {
+        "composer-plugin-api": "^1.0"
+    },
+    "require-dev": {
+        "composer/composer": "1.0.*@dev",
+        "phpunit/phpunit": "4.1.*"
+    }
+}
