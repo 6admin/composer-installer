@@ -4,28 +4,23 @@ namespace Composer\Installers;
 class SixAdminInstaller extends BaseInstaller
 {
     protected $locations = array(
+        'service' => 'services/{$name}/',
         'module' => 'modules/{$name}/',
     );
 
     /**
      * Format package name.
      *
-     * For package type six-module, cut off a trailing '-module', convert "-" to "_",
-     * and ucwords the name of the module.
+     * For package names convert "-" to "_" and ucwords the name of the package.
      *
      */
     public function inflectPackageVars($vars)
     {
-        if ($vars['type'] === 'six-module') {
-            return $this->inflectModuleVars($vars);
-        }
-
-        return $vars;
+        return $this->inflectModuleVars($vars);
     }
     
     protected function inflectModuleVars($vars)
     {
-        $vars['name'] = preg_replace('/-module$/', '', $vars['name']);
         $vars['name'] = str_replace(array('-', '_'), ' ', $vars['name']);
         $vars['name'] = str_replace(' ', '', ucwords($vars['name']));
 
