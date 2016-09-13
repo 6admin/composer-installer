@@ -4,8 +4,8 @@ namespace Composer\Installers;
 class SixAdminInstaller extends BaseInstaller
 {
     protected $locations = array(
-        'service' => 'services/{$name}/',
-        'module' => 'modules/{$name}/',
+        'service' => '../services/{$name}/',
+        'module' => '../modules/{$name}/',
     );
 
     /**
